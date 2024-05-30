@@ -1,0 +1,782 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_infoDT" Type="OutArgument(sd:DataTable)" />
+    <x:Property Name="in_infoDT" Type="InArgument(sd:DataTable)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>874.4,10412.8</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>UiPath.Excel.Model</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Excel</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Excel.Enums</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Files.Enums</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Files.Models</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Platform.Triggers</x:String>
+      <x:String>UiPath.Platform.Triggers.Scope</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
+      <x:String>UiPath.Shared.Activities.Utils</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="884.8,10348" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="departmentName" />
+      <Variable x:TypeArguments="x:String" Name="universityName" />
+      <Variable x:TypeArguments="x:String" Name="searchKeyword" />
+      <Variable x:TypeArguments="x:String" Name="answer" />
+      <Variable x:TypeArguments="x:Boolean" Name="Isfile" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="822.4,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;대학백과 시작&quot;]" />
+    <ui:BuildDataTable DataTable="[out_infoDT]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="822.4,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;대학_학과&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; /&gt;&#xA;                &lt;xs:element name=&quot;후기&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: 대학백과" sap:VirtualizedContainerService.HintSize="822.4,9953.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="4336e448-e024-4330-8239-c543c43b654c" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="788.8,9736.8" sap2010:WorkflowViewState.IdRef="Sequence_19">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_infoDT]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="726.4,9327.2" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+              <ui:ForEachRow.Body>
+                <ActivityAction x:TypeArguments="sd:DataRow">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Row" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="692.8,9139.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:String" Name="summary" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="학과명" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="649.6,188" sap2010:WorkflowViewState.IdRef="GetRowItem_1" Row="[Row]">
+                      <ui:GetRowItem.Value>
+                        <OutArgument x:TypeArguments="x:String">[departmentName]</OutArgument>
+                      </ui:GetRowItem.Value>
+                    </ui:GetRowItem>
+                    <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="학교명" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="649.6,188" sap2010:WorkflowViewState.IdRef="GetRowItem_2" Row="[Row]">
+                      <ui:GetRowItem.Value>
+                        <OutArgument x:TypeArguments="x:String">[universityName]</OutArgument>
+                      </ui:GetRowItem.Value>
+                    </ui:GetRowItem>
+                    <Assign sap:VirtualizedContainerService.HintSize="649.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_5">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[searchKeyword]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[universityName + " " + departmentName]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="649.6,7160" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="sd:DataTable" Name="extractDataTable" />
+                        <Variable x:TypeArguments="x:String" Name="q_1" />
+                        <Variable x:TypeArguments="x:String" Name="q_2" />
+                        <Variable x:TypeArguments="x:String" Name="q_3" />
+                        <Variable x:TypeArguments="x:Boolean" Name="exist" />
+                      </Sequence.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="587.2,24.8" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
+                      <uix:NSetText DisplayName="Set Text 'INPUT'" sap:VirtualizedContainerService.HintSize="587.2,163.2" sap2010:WorkflowViewState.IdRef="NSetText_6" ScopeIdentifier="4336e448-e024-4330-8239-c543c43b654c" Text="[searchKeyword]" Version="V3">
+                        <uix:NSetText.Target>
+                          <uix:TargetAnchorable BrowserURL="https://www.univ100.kr/" CvElementArea="402, 407, 1064, 84" CvType="InputBox" DesignTimeRectangle="434, 409, 950, 80" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='search' class='input-search input-search--desktop' aaname='' /&gt;" Guid="1f0c821e-d8fe-4eb7-a0fd-89feae531ef3" InformativeScreenshot="1c702aa86ad0dca6c788e6e795f15cfd.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='대학백과' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target DesignTimeRectangle="1385, 409, 80, 80" ElementType="Button" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='submit' class='input-submit' aaname='' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NSetText.Target>
+                      </uix:NSetText>
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'INPUT'" sap:VirtualizedContainerService.HintSize="587.2,157.6" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4336e448-e024-4330-8239-c543c43b654c" Version="V3">
+                        <uix:NClick.Target>
+                          <uix:TargetAnchorable BrowserURL="https://www.univ100.kr/" DesignTimeRectangle="1385, 467, 80, 80" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='submit' class='input-submit' aaname='' /&gt;" Guid="ce460081-adf1-443c-bdd7-02271c8d7a56" InformativeScreenshot="33acab40d2c6e546ea9ee1d31ce4c602.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='대학백과' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target CvTextArea="432, 489, 939, 38" CvTextArgument="DAISH SPALE9S-5 X" CvType="Text" DesignTimeRectangle="434, 467, 950, 80" ElementType="InputBox" FriendlyName="'명지대 융합소프트웨어학부'" FullSelectorArgument="&lt;webctrl tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='search' class='input-search input-search--desktop' aaname='' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, CV" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NClick.Target>
+                      </uix:NClick>
+                      <ui:UiElementExists DisplayName="Element Exists 'BUTTON'" Exists="[exist]" sap:VirtualizedContainerService.HintSize="587.2,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+                        <ui:UiElementExists.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="34e68c3e-5dd2-45a4-b9d0-1cd8a89d8df1" InformativeScreenshot="4eaef50bfb5f0032dd66a083188dd22f" Selector="&lt;webctrl tag='BUTTON' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:UiElementExists.Target>
+                      </ui:UiElementExists>
+                      <If Condition="[exist]" sap:VirtualizedContainerService.HintSize="587.2,6435.2" sap2010:WorkflowViewState.IdRef="If_1">
+                        <If.Then>
+                          <Sequence sap:VirtualizedContainerService.HintSize="553.6,6080.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                            <Sequence.Variables>
+                              <Variable x:TypeArguments="x:Boolean" Name="is_review1" />
+                              <Variable x:TypeArguments="x:Boolean" Name="is_review2" />
+                              <Variable x:TypeArguments="x:Boolean" Name="is_review3" />
+                            </Sequence.Variables>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  /info/25/894'" sap:VirtualizedContainerService.HintSize="510.4,107.2" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+                              <ui:Click.CursorPosition>
+                                <ui:CursorPosition Position="Center">
+                                  <ui:CursorPosition.OffsetX>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:CursorPosition.OffsetX>
+                                  <ui:CursorPosition.OffsetY>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:CursorPosition.OffsetY>
+                                </ui:CursorPosition>
+                              </ui:Click.CursorPosition>
+                              <ui:Click.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="520b88f8-b2df-40b5-b186-9b063d5767e5" InformativeScreenshot="65cde0d839737f4df5a7e627771271d0" Selector="&lt;webctrl tag='A' class='searchpage__result searchpage__result--first' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;a' /&gt;">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:Click.Target>
+                            </ui:Click>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '대학후기'" sap:VirtualizedContainerService.HintSize="510.4,157.6" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4336e448-e024-4330-8239-c543c43b654c" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="https://www.univ100.kr/info/25/894" CvTextArea="904, 631, 90, 28" CvTextArgument="CH$$$7|" CvType="Text" DesignTimeRectangle="906, 624, 88, 47" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'대학후기'" FullSelectorArgument="&lt;webctrl aaname='대학후기' class='content' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='대학후기' class='content' tag='SPAN' type='' check:innerText='대학후기' /&gt;" Guid="3f8a5dd0-f433-4871-818f-4695bdccd03f" InformativeScreenshot="9e04a32e2ba4f767cf04fe7e00884df0.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='상명대학교 서울 SW융합학부 컴퓨터과학전공 - 학과 정보 | 대학백과' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                            <uix:NSetText DisplayName="Set Text 'INPUT'" sap:VirtualizedContainerService.HintSize="510.4,163.2" sap2010:WorkflowViewState.IdRef="NSetText_2" ScopeIdentifier="4336e448-e024-4330-8239-c543c43b654c" Text="교수님" Version="V3">
+                              <uix:NSetText.Target>
+                                <uix:TargetAnchorable BrowserURL="https://www.univ100.kr/review/50/1660" CvElementArea="401, 380, 458, 55" CvType="InputBox" DesignTimeRectangle="421, 397, 373, 20" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl class='search__keyword' tag='INPUT' type='search' /&gt;" FuzzySelectorArgument="&lt;webctrl class='search__keyword' tag='INPUT' type='search' aaname='' /&gt;" Guid="b522ea79-b7a1-422c-865c-b150f97a2506" InformativeScreenshot="cd2f0366ae530ee8c4c1ec0eed55d16f.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='명지대학교 융합소프트웨어학부 - 대학 후기 | 대학백과' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target DesignTimeRectangle="794, 382, 60, 50" ElementType="Button" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl class='search__submit' tag='INPUT' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl class='search__submit' tag='INPUT' type='submit' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEAAAAA2CAYAAAB3Ep8CAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAM3SURBVGhD7ZtbS6JRFIb9/z+kzEw0ywhB0OgAHoIyUzuXoaUl3ok3a3gW7MFiO+PQ9+0Oay5eCFlJ77PX6dNdYjabiWX9B+B70ZISV1dX8t11c3MjDw8P8vT0JJPJxGt0kRKvr6/y3TUajeT5+Vn6/b7c398rkOFwKNPp1Gt6Xj8CwHsB5PHxUUGMx2OvcacfCcCJrLi7u9PS8JlHPxqAU6/X0/IwCwABwZcJZgAgyuF9TzAFgJ5AY5yfDqYAIKYDI9IsAEYkWWAWAGJZchujSQCMRDcRTAKgGfLsYBbAfB8wCQDxFPkpAF5eXvQEGEWIn31xcSs4AIzTfVutlhwdHUm5XJa9vT1pNBpyeXmpjYkY3+/GoaAA6LjHx8eyvb0ta2trsrKy8kYbGxsK5Pb2NhiEYAAwf3BwIKlUSs2m02kplUqaBfv7+7KzsyPJZFK1tbWlzcn3PlErCABOk5N35ovFoo4fxhC1jwaDgZyenkomk9GYzc1N7Q2+94tSQQBQ86S9M78ovXn97OxMS4HYarXqjYtSsQNwpqh50p6T98U5kQ2VSkVWV1cll8tp6fjiolLsADBEnXOi1Dxp74ubV7PZVGDr6+tyfX3tjYlKsQOgjunsAADEMvMe05inZzAufTFRKQgA5jwA6PbLALi4uFAAqN1ue2OiUpASqNfrCoBRR7f3xTnRM4hnHNIzaKC+uKgUOwDEhkdnxxSjbtEUQHxoCSiA7e7uLpUxH1EQAKy39AEAMOeZCu+NAQXzLo4m2O1238TEoSAAMMdmx4bHyZINjDpA0PCoedK+UCioeWKofz699b1flAoCADkIbHgYZM67UYeccSe3B8S9EgcD4MRUYMPDHMYZdYiGR83T9Q8PD3+vzfl8XnvIn/rGRxQcgBMbHul/fn6uptkQnUn6Q61WUyhAoHTigvBpAP4mzJ6cnEg2m1UIZEUcE+HLAkCUS6fTUfP8oaYywAnTnHwc5tGXBxC3TAMgs0x/LG7+ixHzX42Z/nJ0vv5NAjB9QcL8FRnTl6RMX5Mze1GSmjd5VZZRZ+qyNIY5bdKcJQfjjLqlrsvzVPTdhWF2e1L9n/9hwveiHc3kF2/F26HYmDdpAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NSetText.Target>
+                            </uix:NSetText>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'INPUT'" sap:VirtualizedContainerService.HintSize="510.4,157.6" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4336e448-e024-4330-8239-c543c43b654c" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="https://www.univ100.kr/review/50/1660" DesignTimeRectangle="794, 382, 60, 50" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl class='search__submit' tag='INPUT' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl class='search__submit' tag='INPUT' type='submit' aaname='' /&gt;" Guid="243c232f-b168-48f7-a926-9ee9c9402e1f" InformativeScreenshot="185b10c2629f2e40fd3cee89b40cd5d5.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='명지대학교 융합소프트웨어학부 - 대학 후기 | 대학백과' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target CvTextArea="417, 395, 52, 25" CvTextArgument="meH" CvType="Text" DesignTimeRectangle="404, 382, 450, 50" ElementType="Container" FriendlyName="'교수님'" FullSelectorArgument="&lt;webctrl class='search__form' tag='FORM' /&gt;" FuzzySelectorArgument="&lt;webctrl class='search__form' tag='FORM' type='' aaname=' ' check:text='교수님' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, CV" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="510.4,346.4" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                              <ui:CommentOut.Body>
+                                <Sequence DisplayName="무시된 액티비티" sap:VirtualizedContainerService.HintSize="449.6,268" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:TextExists FormattedText="{x:Null}" DisplayName="Text Exists 'DIV'" sap:VirtualizedContainerService.HintSize="387.2,156" sap2010:WorkflowViewState.IdRef="TextExists_1" Occurrence="1" Result="[is_review1]" Text="아직 등록된 대학 후기가 없습니다.">
+                                    <ui:TextExists.Target>
+                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6a8c3a0f-1c1f-496a-bacd-eb95c7c76609" InformativeScreenshot="729d434c80d424b0a5e17a358f9828bc" Selector="&lt;webctrl class='empty__header' parentid='__layout' tag='DIV' /&gt;">
+                                        <ui:Target.TimeoutMS>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:Target.TimeoutMS>
+                                        <ui:Target.WaitForReady>
+                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                        </ui:Target.WaitForReady>
+                                      </ui:Target>
+                                    </ui:TextExists.Target>
+                                  </ui:TextExists>
+                                </Sequence>
+                              </ui:CommentOut.Body>
+                            </ui:CommentOut>
+                            <ui:ImageFound DisplayName="Image Exists 'msedge.exe 이화여자대학교'" Found="[is_review1]" sap:VirtualizedContainerService.HintSize="510.4,107.2" sap2010:WorkflowViewState.IdRef="ImageFound_1">
+                              <ui:ImageFound.Image>
+                                <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" InitialScalingFactor="1.25" Profile="Basic" TargetImageBase64="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" />
+                              </ui:ImageFound.Image>
+                              <ui:ImageFound.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="810bfd98-aeb5-4743-96cc-dec9e12dd8b9">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:ImageFound.Target>
+                            </ui:ImageFound>
+                            <If Condition="[is_review1]" sap:VirtualizedContainerService.HintSize="510.4,946.4" sap2010:WorkflowViewState.IdRef="If_2">
+                              <If.Then>
+                                <Sequence sap:VirtualizedContainerService.HintSize="476.8,171.2" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_10">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:String">[q_1]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:String">없습니다.</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                </Sequence>
+                              </If.Then>
+                              <If.Else>
+                                <Sequence sap:VirtualizedContainerService.HintSize="376.8,592" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click " sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_22" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4336e448-e024-4330-8239-c543c43b654c" Version="V3">
+                                    <uix:NClick.Target>
+                                      <uix:TargetAnchorable BrowserURL="https://www.univ100.kr/review/25/894" DesignTimeRectangle="399, 513, 1070, 411" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'SW융합학부 컴퓨터과학전공,'" FullSelectorArgument="&lt;webctrl class='review' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl class='review' /&gt;&lt;webctrl css-selector='#__layout &amp;gt; div &amp;gt; div.reviewpage.view &amp;gt; div.reviewpage__reviews &amp;gt; div &amp;gt; div &amp;gt; div.vue-recycle-scroller__item-wrapper &amp;gt; div:nth-child(1) &amp;gt; div' /&gt;" Guid="ebac275f-e995-4ae1-8752-afde725ccba0" InformativeScreenshot="24518941ae1eb5fd7b71414270a273ed.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='상명대학교 서울 SW융합학부 컴퓨터과학전공 - 대학 후기 | 대학백과' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+                                    </uix:NClick.Target>
+                                  </uix:NClick>
+                                  <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'DIV'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="GetValue_5">
+                                    <ui:GetValue.Target>
+                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="cfedac8c-605d-4b18-b8ce-95494814c563" InformativeScreenshot="2d12111a46d99c08811850c996eebf22" Selector="&lt;webctrl class='review__dept' parentid='__layout' tag='DIV' /&gt;">
+                                        <ui:Target.TimeoutMS>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:Target.TimeoutMS>
+                                        <ui:Target.WaitForReady>
+                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                        </ui:Target.WaitForReady>
+                                      </ui:Target>
+                                    </ui:GetValue.Target>
+                                    <ui:GetValue.Value>
+                                      <OutArgument x:TypeArguments="x:String">[q_1]</OutArgument>
+                                    </ui:GetValue.Value>
+                                  </ui:GetValue>
+                                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '대학후기'" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_18" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4336e448-e024-4330-8239-c543c43b654c" Version="V3">
+                                    <uix:NClick.Target>
+                                      <uix:TargetAnchorable BrowserURL="https://www.univ100.kr/review/25/894/view/14771" CvTextArea="904, 631, 90, 28" CvTextArgument="C$1$7|" CvType="Text" DesignTimeRectangle="906, 624, 88, 47" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'대학후기'" FullSelectorArgument="&lt;webctrl aaname='대학후기' class='content' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='대학후기' class='content' tag='SPAN' type='' check:innerText='대학후기' /&gt;" Guid="5e302f22-48de-4959-bb5c-f2a07098d277" InformativeScreenshot="32a05e2ba72751935394aa99e0c51049.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='상명대학교 서울 SW융합학부 컴퓨터과학전공 후기 - 커리큘럼 나쁘지 않고 교수님들이 좋으심. 선배님들도 취 | 대학백과' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                                    </uix:NClick.Target>
+                                  </uix:NClick>
+                                </Sequence>
+                              </If.Else>
+                            </If>
+                            <uix:NSetText DisplayName="Set Text '교수님'" sap:VirtualizedContainerService.HintSize="510.4,163.2" sap2010:WorkflowViewState.IdRef="NSetText_3" ScopeIdentifier="4336e448-e024-4330-8239-c543c43b654c" Text="커리큘럼" Version="V3">
+                              <uix:NSetText.Target>
+                                <uix:TargetAnchorable BrowserURL="https://www.univ100.kr/review/50/1660" CvElementArea="401, 380, 458, 54" CvType="InputBox" DesignTimeRectangle="421, 397, 373, 20" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'교수님'" FullSelectorArgument="&lt;webctrl class='search__keyword' tag='INPUT' type='search' /&gt;" FuzzySelectorArgument="&lt;webctrl class='search__keyword' tag='INPUT' type='search' aaname='' /&gt;" Guid="cb5fe01b-4edc-47f7-bef5-b1227dabe193" InformativeScreenshot="f8a26bf4f84d654a21e5a5cb352467bd.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='명지대학교 융합소프트웨어학부 - 대학 후기 | 대학백과' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target DesignTimeRectangle="794, 382, 60, 50" ElementType="Button" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl class='search__submit' tag='INPUT' type='submit' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEAAAAA2CAYAAAB3Ep8CAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAM3SURBVGhD7ZtbS6JRFIb9/z+kzEw0ywhB0OgAHoIyUzuXoaUl3ok3a3gW7MFiO+PQ9+0Oay5eCFlJ77PX6dNdYjabiWX9B+B70ZISV1dX8t11c3MjDw8P8vT0JJPJxGt0kRKvr6/y3TUajeT5+Vn6/b7c398rkOFwKNPp1Gt6Xj8CwHsB5PHxUUGMx2OvcacfCcCJrLi7u9PS8JlHPxqAU6/X0/IwCwABwZcJZgAgyuF9TzAFgJ5AY5yfDqYAIKYDI9IsAEYkWWAWAGJZchujSQCMRDcRTAKgGfLsYBbAfB8wCQDxFPkpAF5eXvQEGEWIn31xcSs4AIzTfVutlhwdHUm5XJa9vT1pNBpyeXmpjYkY3+/GoaAA6LjHx8eyvb0ta2trsrKy8kYbGxsK5Pb2NhiEYAAwf3BwIKlUSs2m02kplUqaBfv7+7KzsyPJZFK1tbWlzcn3PlErCABOk5N35ovFoo4fxhC1jwaDgZyenkomk9GYzc1N7Q2+94tSQQBQ86S9M78ovXn97OxMS4HYarXqjYtSsQNwpqh50p6T98U5kQ2VSkVWV1cll8tp6fjiolLsADBEnXOi1Dxp74ubV7PZVGDr6+tyfX3tjYlKsQOgjunsAADEMvMe05inZzAufTFRKQgA5jwA6PbLALi4uFAAqN1ue2OiUpASqNfrCoBRR7f3xTnRM4hnHNIzaKC+uKgUOwDEhkdnxxSjbtEUQHxoCSiA7e7uLpUxH1EQAKy39AEAMOeZCu+NAQXzLo4m2O1238TEoSAAMMdmx4bHyZINjDpA0PCoedK+UCioeWKofz699b1flAoCADkIbHgYZM67UYeccSe3B8S9EgcD4MRUYMPDHMYZdYiGR83T9Q8PD3+vzfl8XnvIn/rGRxQcgBMbHul/fn6uptkQnUn6Q61WUyhAoHTigvBpAP4mzJ6cnEg2m1UIZEUcE+HLAkCUS6fTUfP8oaYywAnTnHwc5tGXBxC3TAMgs0x/LG7+ixHzX42Z/nJ0vv5NAjB9QcL8FRnTl6RMX5Mze1GSmjd5VZZRZ+qyNIY5bdKcJQfjjLqlrsvzVPTdhWF2e1L9n/9hwveiHc3kF2/F26HYmDdpAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector">
+                                        <uix:Target.FuzzySelectorArgument>
+                                          <InArgument x:TypeArguments="x:String">
+                                            <Literal x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="Literal`1_2">&lt;webctrl class='search__submit' tag='INPUT' type='submit' aaname='' /&gt;</Literal>
+                                          </InArgument>
+                                        </uix:Target.FuzzySelectorArgument>
+                                      </uix:Target>
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NSetText.Target>
+                            </uix:NSetText>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'INPUT'" sap:VirtualizedContainerService.HintSize="510.4,157.6" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4336e448-e024-4330-8239-c543c43b654c" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="https://www.univ100.kr/review/50/1660" DesignTimeRectangle="794, 382, 60, 50" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl class='search__submit' tag='INPUT' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl class='search__submit' tag='INPUT' type='submit' aaname='' /&gt;" Guid="ad9ce75f-8df7-4859-b24f-84667183d6dd" InformativeScreenshot="b3b3c50d3d33751620476880e5a70516.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='명지대학교 융합소프트웨어학부 - 대학 후기 | 대학백과' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target CvElementArea="402, 380, 457, 54" CvType="InputBox" DesignTimeRectangle="421, 397, 373, 20" ElementType="InputBox" FriendlyName="'커리큘럼'" FullSelectorArgument="&lt;webctrl class='search__keyword' tag='INPUT' type='search' /&gt;" FuzzySelectorArgument="&lt;webctrl class='search__keyword' tag='INPUT' type='search' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAXkAAAAYCAYAAAAf3I12AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAG4SURBVHhe7drRrYIwFIDhuw7LyCYyiWESmcSETVihV4piC6enRSXB9n/4EiO3tk8/R7x/wzAYAECeiDwAZIzIA0DGiDwAZIzIA0DGiDwAZIzIA0DG3ov8tTFV1ZhOupagv9SmOrWmX13rTXuq7p8dIa5NdGtN/cHZAeCXeJHvzkJQH5qrszAQeRtvYe3IXR+OfIJx7403CO/sRB5AQRIm+c40VW3am/Pepkl+iu/+kZes9ybyAEoSj7wU1b0ibz9XnsY9RB4AkrwirwS2vvT+wr0in0K66VjTPtL5m+vyGpEHUAZ9kg9NvQeOvDe1S5jkARREifz4LP45xU+v3elYiryN9+rvJmrkbXjldSov9kQeAJYCkX883jh3wrW7wCRv4x1a44hO8lKIx/fU6X/5SMY3x5/IAyjIOvLPqVqL9SEjDwBY8iI//598LNS7RV6fxmfRG5CwxsMkD6AMr8g/JvjoM+3R3pO8IrrHeLat3xIAIFPKD68KLfKrqdk1rdl9kifyAGB9NfKpYpFP+jYRQuQBYHbIyIvTu0fZ255NWuMi8gDKcLDIAwC+6b3IAwB+ApEHgGwN5h8Wy7Ghnh5aEgAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, CV" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="510.4,346.4" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                              <ui:CommentOut.Body>
+                                <Sequence DisplayName="무시된 액티비티" sap:VirtualizedContainerService.HintSize="449.6,268" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:TextExists FormattedText="{x:Null}" DisplayName="Text Exists 'DIV'" sap:VirtualizedContainerService.HintSize="387.2,156" sap2010:WorkflowViewState.IdRef="TextExists_2" Occurrence="1" Result="[is_review2]" Text="아직 등록된 대학 후기가 없습니다.">
+                                    <ui:TextExists.Target>
+                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6a8c3a0f-1c1f-496a-bacd-eb95c7c76609" InformativeScreenshot="729d434c80d424b0a5e17a358f9828bc" Selector="&lt;webctrl class='empty__header' parentid='__layout' tag='DIV' /&gt;">
+                                        <ui:Target.TimeoutMS>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:Target.TimeoutMS>
+                                        <ui:Target.WaitForReady>
+                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                        </ui:Target.WaitForReady>
+                                      </ui:Target>
+                                    </ui:TextExists.Target>
+                                  </ui:TextExists>
+                                </Sequence>
+                              </ui:CommentOut.Body>
+                            </ui:CommentOut>
+                            <ui:ImageFound DisplayName="Image Exists 'msedge.exe 이화여자대학교'" Found="[is_review2]" sap:VirtualizedContainerService.HintSize="510.4,107.2" sap2010:WorkflowViewState.IdRef="ImageFound_2">
+                              <ui:ImageFound.Image>
+                                <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" InitialScalingFactor="1.25" Profile="Basic" TargetImageBase64="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" />
+                              </ui:ImageFound.Image>
+                              <ui:ImageFound.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="810bfd98-aeb5-4743-96cc-dec9e12dd8b9">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:ImageFound.Target>
+                            </ui:ImageFound>
+                            <If Condition="[is_review2]" sap:VirtualizedContainerService.HintSize="510.4,946.4" sap2010:WorkflowViewState.IdRef="If_3">
+                              <If.Then>
+                                <Sequence sap:VirtualizedContainerService.HintSize="476.8,171.2" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_12">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:String">[q_2]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:String">없습니다.</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                </Sequence>
+                              </If.Then>
+                              <If.Else>
+                                <Sequence sap:VirtualizedContainerService.HintSize="376.8,592" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click " sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_19" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4336e448-e024-4330-8239-c543c43b654c" Version="V3">
+                                    <uix:NClick.Target>
+                                      <uix:TargetAnchorable BrowserURL="https://www.univ100.kr/review/25/894" DesignTimeRectangle="399, 513, 1070, 411" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'SW융합학부 컴퓨터과학전공,'" FullSelectorArgument="&lt;webctrl class='review' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl class='review' /&gt;&lt;webctrl css-selector='#__layout &amp;gt; div &amp;gt; div.reviewpage.view &amp;gt; div.reviewpage__reviews &amp;gt; div &amp;gt; div &amp;gt; div.vue-recycle-scroller__item-wrapper &amp;gt; div:nth-child(1) &amp;gt; div' /&gt;" Guid="ebac275f-e995-4ae1-8752-afde725ccba0" InformativeScreenshot="24518941ae1eb5fd7b71414270a273ed.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='상명대학교 서울 SW융합학부 컴퓨터과학전공 - 대학 후기 | 대학백과' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+                                    </uix:NClick.Target>
+                                  </uix:NClick>
+                                  <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'DIV'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="GetValue_9">
+                                    <ui:GetValue.Target>
+                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="cfedac8c-605d-4b18-b8ce-95494814c563" InformativeScreenshot="2d12111a46d99c08811850c996eebf22" Selector="&lt;webctrl class='review__dept' parentid='__layout' tag='DIV' /&gt;">
+                                        <ui:Target.TimeoutMS>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:Target.TimeoutMS>
+                                        <ui:Target.WaitForReady>
+                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                        </ui:Target.WaitForReady>
+                                      </ui:Target>
+                                    </ui:GetValue.Target>
+                                    <ui:GetValue.Value>
+                                      <OutArgument x:TypeArguments="x:String">[q_2]</OutArgument>
+                                    </ui:GetValue.Value>
+                                  </ui:GetValue>
+                                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '대학후기'" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_20" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4336e448-e024-4330-8239-c543c43b654c" Version="V3">
+                                    <uix:NClick.Target>
+                                      <uix:TargetAnchorable BrowserURL="https://www.univ100.kr/review/25/894/view/14771" CvTextArea="904, 631, 90, 28" CvTextArgument="C$1$7|" CvType="Text" DesignTimeRectangle="906, 624, 88, 47" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'대학후기'" FullSelectorArgument="&lt;webctrl aaname='대학후기' class='content' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='대학후기' class='content' tag='SPAN' type='' check:innerText='대학후기' /&gt;" Guid="1f6a468e-1114-4480-823a-52d99bd7faf3" InformativeScreenshot="32a05e2ba72751935394aa99e0c51049.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='상명대학교 서울 SW융합학부 컴퓨터과학전공 후기 - 커리큘럼 나쁘지 않고 교수님들이 좋으심. 선배님들도 취 | 대학백과' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                                    </uix:NClick.Target>
+                                  </uix:NClick>
+                                </Sequence>
+                              </If.Else>
+                            </If>
+                            <uix:NSetText DisplayName="Set Text 'INPUT'" sap:VirtualizedContainerService.HintSize="510.4,163.2" sap2010:WorkflowViewState.IdRef="NSetText_4" ScopeIdentifier="4336e448-e024-4330-8239-c543c43b654c" Text="강의" Version="V3">
+                              <uix:NSetText.Target>
+                                <uix:TargetAnchorable BrowserURL="https://www.univ100.kr/review/50/1660" CvElementArea="402, 380, 457, 55" CvType="InputBox" DesignTimeRectangle="421, 397, 373, 20" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl class='search__keyword' tag='INPUT' type='search' /&gt;" FuzzySelectorArgument="&lt;webctrl class='search__keyword' tag='INPUT' type='search' aaname='' /&gt;" Guid="0e8178f3-5b97-4ffd-8cc0-4f045146f191" InformativeScreenshot="156d98500a75a9f7ea0942504758ddba.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='명지대학교 융합소프트웨어학부 - 대학 후기 | 대학백과' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target DesignTimeRectangle="794, 382, 60, 50" ElementType="Button" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl class='search__submit' tag='INPUT' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl class='search__submit' tag='INPUT' type='submit' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEAAAAA2CAYAAAB3Ep8CAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAM3SURBVGhD7ZtbS6JRFIb9/z+kzEw0ywhB0OgAHoIyUzuXoaUl3ok3a3gW7MFiO+PQ9+0Oay5eCFlJ77PX6dNdYjabiWX9B+B70ZISV1dX8t11c3MjDw8P8vT0JJPJxGt0kRKvr6/y3TUajeT5+Vn6/b7c398rkOFwKNPp1Gt6Xj8CwHsB5PHxUUGMx2OvcacfCcCJrLi7u9PS8JlHPxqAU6/X0/IwCwABwZcJZgAgyuF9TzAFgJ5AY5yfDqYAIKYDI9IsAEYkWWAWAGJZchujSQCMRDcRTAKgGfLsYBbAfB8wCQDxFPkpAF5eXvQEGEWIn31xcSs4AIzTfVutlhwdHUm5XJa9vT1pNBpyeXmpjYkY3+/GoaAA6LjHx8eyvb0ta2trsrKy8kYbGxsK5Pb2NhiEYAAwf3BwIKlUSs2m02kplUqaBfv7+7KzsyPJZFK1tbWlzcn3PlErCABOk5N35ovFoo4fxhC1jwaDgZyenkomk9GYzc1N7Q2+94tSQQBQ86S9M78ovXn97OxMS4HYarXqjYtSsQNwpqh50p6T98U5kQ2VSkVWV1cll8tp6fjiolLsADBEnXOi1Dxp74ubV7PZVGDr6+tyfX3tjYlKsQOgjunsAADEMvMe05inZzAufTFRKQgA5jwA6PbLALi4uFAAqN1ue2OiUpASqNfrCoBRR7f3xTnRM4hnHNIzaKC+uKgUOwDEhkdnxxSjbtEUQHxoCSiA7e7uLpUxH1EQAKy39AEAMOeZCu+NAQXzLo4m2O1238TEoSAAMMdmx4bHyZINjDpA0PCoedK+UCioeWKofz699b1flAoCADkIbHgYZM67UYeccSe3B8S9EgcD4MRUYMPDHMYZdYiGR83T9Q8PD3+vzfl8XnvIn/rGRxQcgBMbHul/fn6uptkQnUn6Q61WUyhAoHTigvBpAP4mzJ6cnEg2m1UIZEUcE+HLAkCUS6fTUfP8oaYywAnTnHwc5tGXBxC3TAMgs0x/LG7+ixHzX42Z/nJ0vv5NAjB9QcL8FRnTl6RMX5Mze1GSmjd5VZZRZ+qyNIY5bdKcJQfjjLqlrsvzVPTdhWF2e1L9n/9hwveiHc3kF2/F26HYmDdpAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NSetText.Target>
+                            </uix:NSetText>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'INPUT'" sap:VirtualizedContainerService.HintSize="510.4,157.6" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4336e448-e024-4330-8239-c543c43b654c" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="https://www.univ100.kr/review/50/1660" DesignTimeRectangle="794, 382, 60, 50" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl class='search__submit' tag='INPUT' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl class='search__submit' tag='INPUT' type='submit' aaname='' /&gt;" Guid="88550202-ab69-4b56-b475-77d047b9cef3" InformativeScreenshot="7d390689c3105cb72c681ee0c2f6f9d7.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='명지대학교 융합소프트웨어학부 - 대학 후기 | 대학백과' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target CvElementArea="401, 380, 457, 54" CvType="InputBox" DesignTimeRectangle="421, 397, 373, 20" ElementType="InputBox" FriendlyName="'강의'" FullSelectorArgument="&lt;webctrl class='search__keyword' tag='INPUT' type='search' /&gt;" FuzzySelectorArgument="&lt;webctrl class='search__keyword' tag='INPUT' type='search' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAXkAAAAYCAYAAAAf3I12AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAFmSURBVHhe7dvRcYJAFEDRtEMz0olU4lCJVOIMndDCZgQFDAtEJ9mYnfNxfkB/r4/H+tF1XQAgTyIPkDGRB8iYyANkTOQBMibyABkTeYCMvRD5NtSHIlTn2L1vutShLMpQXyL3APgxj5E/V6Eoiqgp6vuRb46P3y1P7eNnRB4gif1Jvg9yFZrx2lbkh3vFsVleO9ShvV8TeYAkdiPfnspotKORvz4JzGM+akI1fxoQeYAktiMfjfFtMr+vY2Y/AMsfhMl1hTOubUQeIImNyA/T92KfbpIH+Dfike8jHAv81Ubk71O+nTzAW1hEfjgZsxXgrcgPvp6uWaxwRB4giSnyt+l9bac+2Y/8LpEHSGJ1J9+/RJ1P46P5ccoXiTxAEpHIDy9JVyf62x+mTPIA728Z+T7i29N67KjkYg+/5voCVuQBkjDJA2Ts+Z189Bz8k0QeIInVyP8qkQdI4m8iD0ASIg+QrS58Ahk+4RzmtpNyAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, CV" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                  <uix:TargetAnchorable.PointOffset>
+                                    <uix:PointOffset X="-3" Y="2" />
+                                  </uix:TargetAnchorable.PointOffset>
+                                </uix:TargetAnchorable>
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="510.4,346.4" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                              <ui:CommentOut.Body>
+                                <Sequence DisplayName="무시된 액티비티" sap:VirtualizedContainerService.HintSize="449.6,268" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:TextExists FormattedText="{x:Null}" DisplayName="Text Exists 'DIV'" sap:VirtualizedContainerService.HintSize="387.2,156" sap2010:WorkflowViewState.IdRef="TextExists_3" Occurrence="1" Result="[is_review3]" Text="아직 등록된 대학 후기가 없습니다.">
+                                    <ui:TextExists.Target>
+                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6a8c3a0f-1c1f-496a-bacd-eb95c7c76609" InformativeScreenshot="729d434c80d424b0a5e17a358f9828bc" Selector="&lt;webctrl class='empty__header' parentid='__layout' tag='DIV' /&gt;">
+                                        <ui:Target.TimeoutMS>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:Target.TimeoutMS>
+                                        <ui:Target.WaitForReady>
+                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                        </ui:Target.WaitForReady>
+                                      </ui:Target>
+                                    </ui:TextExists.Target>
+                                  </ui:TextExists>
+                                </Sequence>
+                              </ui:CommentOut.Body>
+                            </ui:CommentOut>
+                            <ui:ImageFound DisplayName="Image Exists 'msedge.exe 이화여자대학교'" Found="[is_review3]" sap:VirtualizedContainerService.HintSize="510.4,107.2" sap2010:WorkflowViewState.IdRef="ImageFound_3">
+                              <ui:ImageFound.Image>
+                                <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" InitialScalingFactor="1.25" Profile="Basic" TargetImageBase64="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" />
+                              </ui:ImageFound.Image>
+                              <ui:ImageFound.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="810bfd98-aeb5-4743-96cc-dec9e12dd8b9">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:ImageFound.Target>
+                            </ui:ImageFound>
+                            <If Condition="[is_review3]" sap:VirtualizedContainerService.HintSize="510.4,748.8" sap2010:WorkflowViewState.IdRef="If_4">
+                              <If.Then>
+                                <Sequence sap:VirtualizedContainerService.HintSize="476.8,171.2" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_14">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:String">[q_3]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:String">없습니다.</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                </Sequence>
+                              </If.Then>
+                              <If.Else>
+                                <Sequence sap:VirtualizedContainerService.HintSize="376.8,394.4" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click " sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_21" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4336e448-e024-4330-8239-c543c43b654c" Version="V3">
+                                    <uix:NClick.Target>
+                                      <uix:TargetAnchorable BrowserURL="https://www.univ100.kr/review/25/894" DesignTimeRectangle="399, 513, 1070, 411" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'SW융합학부 컴퓨터과학전공,'" FullSelectorArgument="&lt;webctrl class='review' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl class='review' /&gt;&lt;webctrl css-selector='#__layout &amp;gt; div &amp;gt; div.reviewpage.view &amp;gt; div.reviewpage__reviews &amp;gt; div &amp;gt; div &amp;gt; div.vue-recycle-scroller__item-wrapper &amp;gt; div:nth-child(1) &amp;gt; div' /&gt;" Guid="ebac275f-e995-4ae1-8752-afde725ccba0" InformativeScreenshot="24518941ae1eb5fd7b71414270a273ed.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='상명대학교 서울 SW융합학부 컴퓨터과학전공 - 대학 후기 | 대학백과' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+                                    </uix:NClick.Target>
+                                  </uix:NClick>
+                                  <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'DIV'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="GetValue_12">
+                                    <ui:GetValue.Target>
+                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="cfedac8c-605d-4b18-b8ce-95494814c563" InformativeScreenshot="2d12111a46d99c08811850c996eebf22" Selector="&lt;webctrl class='review__dept' parentid='__layout' tag='DIV' /&gt;">
+                                        <ui:Target.TimeoutMS>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:Target.TimeoutMS>
+                                        <ui:Target.WaitForReady>
+                                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                                        </ui:Target.WaitForReady>
+                                      </ui:Target>
+                                    </ui:GetValue.Target>
+                                    <ui:GetValue.Value>
+                                      <OutArgument x:TypeArguments="x:String">[q_3]</OutArgument>
+                                    </ui:GetValue.Value>
+                                  </ui:GetValue>
+                                </Sequence>
+                              </If.Else>
+                            </If>
+                            <Assign sap:VirtualizedContainerService.HintSize="510.4,81.6" sap2010:WorkflowViewState.IdRef="Assign_3">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[answer]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">[String.Join(Environment.NewLine, {q_1.ToString, q_2.ToString, q_3.ToString})]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </Sequence>
+                        </If.Then>
+                        <If.Else>
+                          <Sequence sap:VirtualizedContainerService.HintSize="476.8,171.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_6">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[answer]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">학과가 없습니다.</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </Sequence>
+                        </If.Else>
+                      </If>
+                    </Sequence>
+                    <ui:WriteTextFile File="{x:Null}" DisplayName="Write Text File" FileName="review.txt" sap:VirtualizedContainerService.HintSize="649.6,134.4" sap2010:WorkflowViewState.IdRef="WriteTextFile_3" Text="[answer]" />
+                    <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" sap2010:Annotation.AnnotationText="요약 AI 실행" DisplayName="Start Process" FileName="recap-main 2\recap-main 2\src\test\java\AppTest.java" sap:VirtualizedContainerService.HintSize="649.6,119.2" sap2010:WorkflowViewState.IdRef="StartProcess_5">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:StartProcess>
+                    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DelayBefore="10" DisplayName="Send Hotkey 'text Editor'" sap:VirtualizedContainerService.HintSize="649.6,157.6" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="f10" KeyModifiers="Ctrl, Shift" SpecialKey="True">
+                      <ui:SendHotkey.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ba76295d-90fd-40bf-9900-94451217bf7b" InformativeScreenshot="71d53a5036f8c894e2dbd3c1f5803a8c" Selector="&lt;wnd app='idea64.exe' cls='SunAwtFrame' title='AppTest.java – AppTest.java [recap.test]' /&gt;&lt;java role='page tab list' /&gt;&lt;java name='AppTest.java' role='page tab' /&gt;&lt;java name='Editor for AppTest.java' role='text' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:SendHotkey.Target>
+                    </ui:SendHotkey>
+                    <Delay Duration="00:00:30" sap:VirtualizedContainerService.HintSize="649.6,90.4" sap2010:WorkflowViewState.IdRef="Delay_4" />
+                    <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="review2.txt" sap:VirtualizedContainerService.HintSize="649.6,88" sap2010:WorkflowViewState.IdRef="StartProcess_4" />
+                    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'editable text  텍스트 편집'" sap:VirtualizedContainerService.HintSize="649.6,107.2" sap2010:WorkflowViewState.IdRef="GetValue_11">
+                      <ui:GetValue.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1ec8ca48-16e3-4d6a-a6c3-3fee2497a2fe" InformativeScreenshot="45e298df8e8a40bb70b9b90a3a3857f2" Selector="&lt;wnd app='notepad.exe' cls='Notepad' title='review2 - Windows 메모장' /&gt;&lt;wnd aaname='가로' cls='Edit' /&gt;&lt;ctrl name='텍스트 편집' role='editable text' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:GetValue.Target>
+                      <ui:GetValue.Value>
+                        <OutArgument x:TypeArguments="x:String">[summary]</OutArgument>
+                      </ui:GetValue.Value>
+                    </ui:GetValue>
+                    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'push button  닫기'" sap:VirtualizedContainerService.HintSize="649.6,107.2" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
+                      <ui:Click.CursorPosition>
+                        <ui:CursorPosition Position="Center">
+                          <ui:CursorPosition.OffsetX>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetX>
+                          <ui:CursorPosition.OffsetY>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetY>
+                        </ui:CursorPosition>
+                      </ui:Click.CursorPosition>
+                      <ui:Click.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4e60c9c8-7b66-4f03-bb77-aa204075a19d" InformativeScreenshot="170cd8acb583e08aea9de985151571d1" Selector="&lt;wnd app='notepad.exe' cls='Notepad' title='review2 - Windows 메모장' /&gt;&lt;ctrl name='닫기' role='push button' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:Click.Target>
+                    </ui:Click>
+                    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{searchKeyword, summary}]" DataTable="[out_infoDT]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="649.6,188" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEachRow.Body>
+            </ui:ForEachRow>
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'JBRCustomTitleBarContro...'" sap:VirtualizedContainerService.HintSize="726.4,107.2" sap2010:WorkflowViewState.IdRef="Click_10" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target Element="{x:Null}" Id="42c63115-8402-4836-b0cc-30fb35fa80d7" InformativeScreenshot="ca4218e08d1ed272e60059828c6266a7" Selector="&lt;wnd app='idea64.exe' cls='SunAwtFrame' title='AppTest.java – AppTest.java [recap.test]' /&gt;&lt;wnd cls='JBRCustomTitleBarControls' /&gt;">
+                  <ui:Target.ClippingRegion>
+                    <ui:Region Rectangle="96, 1, 40, 36" />
+                  </ui:Target.ClippingRegion>
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'push button  Exit'" sap:VirtualizedContainerService.HintSize="726.4,107.2" sap2010:WorkflowViewState.IdRef="Click_11" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="881ed737-69c5-4695-aad4-b3736e9552b6" InformativeScreenshot="16be9ebf7b586b11b9f8bb46dcc41fd3" Selector="&lt;wnd app='idea64.exe' cls='SunAwtDialog' title='Confirm Exit' /&gt;&lt;java name='Exit' role='push button' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-9, -9, 1938, 1048" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAMCSURBVFhH5ZfrS9NRGMf3X7hSCoSILTPL8EJRs4vdSAuN6oVFFF0o8EVGJVFRUb2xiFBLLCUEg0pJKw2NLuQ2tbnNS0pLy5rTvNPUmpc97Tzn2c/t18FXO73pA1/47Xm+53yf/djOb9MEYtbNyzDptB9Meu24URcGMsQyKC4YXyOTGdr27YS+0mIYrHoKg9UVIZPz7i0coDM7M5cigzHpwxxNm+IBpqdBBs78G3MPwJr2HUlkDz1uuwVMUfPnHoCp6+IpGGu1gae3Bzx9rpDqx6MScGQdLTBHh0cwUTTHP8C/FEVzRAbZomiOyCBbFM0RGWSLojkig2xRNEdkkC2K5ogMskXRHJFBtiiaIzK4HhTgodSdc0WptR/LgNH3r2HC0QHjHW3QX1YKlqTlSt+WYsCzf8LRjhp+VQ0te7Yq/UBRNEfd/HhwFx2i4Hs4FfHaod1UCea3sxvqYyPBYoiBafdPqs7infSAbfuaoP2ZKJqjbjYkLIa2A+m4AXs6strQy0p8/eXaOTzXGxN1MFr3BmsdJ/bD1+vn8bq//CHUr4wE87IF4Cq+g7WewttB+zNRNEfdZLKlrMXF/gHc1kaAmRkM93scp4+jp+vSGXAV5eN14C23bk7A2kDlE6XmF0Vz1E0m0QDeqakgz6eTR9ATOEBzerLSt6yPxdp/MMDls3MP8KwsaB0TRXPUTSbhZ8DrBXPMQsXzOTsTPXgH7ufhdWtGqtK3bluNtZDcgYGKx/iavdOm5Diwp20Ad3MT1toP78UhGCNva3xrDWDdkqis+Z6X89f+FM1RN5nUAzSnbfR9pyexFshYixVMS8OhIW4ReFxOqs4yNTqCZ4R6f4rmqJtMlnUrYLi2CjovZCk1e6oBeksKsc5OvG83r+Ih5O83rlqCv4CHap7DUO0L6LmXi58Dfz9QFM0RGWSLojkig2xRNEdkkC2K5ogMskXRHKNO+0tkkimK5hj12ncik0xRNMf33zDe96/YIzLKEkXPYo6KiDbqw8p9w/SKFoRaGo1G8wfvjbBpBRXBAAAAAABJRU5ErkJggg==" InformativeScreenshot="dc8721a7763f1dfb623f3b3a53edaa1a.jpg" Selector="&lt;html app='msedge.exe' title='대학백과' /&gt;" Title="대학백과" Url="https://www.univ100.kr/" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
