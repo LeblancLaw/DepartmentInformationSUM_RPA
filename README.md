@@ -44,7 +44,7 @@
 
   
 <details>
-  <summary>**컴퓨터**이라는 키워드로 검색한 후 저장된 학과별 요약 정보</summary>
+  <summary>[컴퓨터]라는 키워드로 검색한 후 저장된 학과별 요약 정보</summary>
    
   - 1. 코딩과 관련된 소프트웨어학과로 학과 정보 저장 후 학과에 대한 사진 저장
       <img width="1470" alt="스크린샷 2024-10-02 오후 11 04 31" src="https://github.com/user-attachments/assets/026f3808-7440-4dda-bf9e-ea76723f14a3">
