@@ -42,6 +42,25 @@
 5. **최종 파일 저장 및 프로세스 종료**
    - 모든 과정을 통해 수집된 데이터를 최종적으로 파일에 저장하고, 자동화된 프로세스를 종료합니다.
 
+  
+<details>
+  <summary>**컴퓨터**이라는 키워드로 검색한 후 저장된 학과별 요약 정보</summary>
+   
+  - 1. 코딩과 관련된 소프트웨어학과로 학과 정보 저장 후 학과에 대한 사진 저장
+      <img width="1470" alt="스크린샷 2024-10-02 오후 11 04 31" src="https://github.com/user-attachments/assets/026f3808-7440-4dda-bf9e-ea76723f14a3">
+  
+  - 2. 요약된 각 학과별 대학 후기 및 수시/정시 경쟁률 비교 시트 저장
+    <img width="1470" alt="스크린샷 2024-10-02 오후 11 04 46" src="https://github.com/user-attachments/assets/6b3fa67f-6286-4351-a039-210c2ba1d4e1">
+  
+  - 3. 조사된 학교의 전형 유형 및 정시 경쟁률 파악
+    <img width="1469" alt="스크린샷 2024-10-02 오후 11 06 16" src="https://github.com/user-attachments/assets/fc5ddc80-a741-4807-a843-5c386f645ff2">
+  
+  - 4. 해당 학교에서 경쟁률을 제공하지 않을 경우의 화면 (에러처리)
+    <img width="1470" alt="스크린샷 2024-10-02 오후 11 06 50" src="https://github.com/user-attachments/assets/9861a42b-f933-4478-96e9-fdf91bc86cfe">
+  
+</details>
+
+
   ## AI 개발 세부 사항
 
   #### 1. AI 모델 개요
